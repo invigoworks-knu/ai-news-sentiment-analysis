@@ -1,1 +1,3 @@
 .venv
+optuna_output
+finetuned-finbert-eth
