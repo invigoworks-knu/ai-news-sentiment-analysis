@@ -1,3 +1,5 @@
 .venv
 optuna_output
 finetuned-finbert-eth
+.DS_Store
+.env
