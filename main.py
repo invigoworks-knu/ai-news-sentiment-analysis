@@ -99,6 +99,8 @@ file = open(f"ids/{date}.txt", "w")
 file.write(",".join(ids))
 file.close()
 
+print("========== get ids finished ==========")
+
 # 3. get news
 filename = f"ids/{date}.txt"
 file = open(filename, "r")
@@ -166,6 +168,8 @@ df = pd.DataFrame(
 )
 df.to_csv(f"news_list/{date}.csv", index=False)
 
+print("========== get news finished ==========")
+
 # 4. llm 감성 분석
 load_dotenv(verbose=True)
 
@@ -230,7 +234,9 @@ labels = [0] * len(news_list)
 
 for idx, news in enumerate(news_list):
     labels[idx] = parseResponse(chain.invoke(news)["label"])
-    print(f"{idx+1}/{len(news_list)} finished...")
+    print(f"llm request : {idx+1}/{len(news_list)} finished...")
 
 df["label"] = labels
 df.to_csv(f"news_list_group_by_date/{date.replace("-",".")}.csv", index=False)
+
+print("========== get news sentiment analysis finished ==========")
