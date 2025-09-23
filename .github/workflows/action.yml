@@ -5,6 +5,9 @@ on: [push]
 #   schedule:
 #     - cron: "0 11 * * *" # KST 매일 03:00
 
+permissions:
+  contents: write
+
 jobs:
   update-json:
     runs-on: ubuntu-latest
@@ -37,5 +40,5 @@ jobs:
           git remote set-url origin https://github.com/invigoworks-knu/ai-news-sentiment-analysis.git
           git add -A
           git commit -m "chore: news with sentiment analyis updated" || echo "No changes to commit"
-          git push https://$GITHUB_TOKEN@github.com/invigoworks-knu/ai-news-sentiment-analysis.git
+          git push https://x-access-token:$GITHUB_TOKEN@github.com/invigoworks-knu/ai-news-sentiment-analysis.git
 
