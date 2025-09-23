@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  update-json:
+  update-news-analysis:
     runs-on: ubuntu-latest
     strategy:
       matrix:
