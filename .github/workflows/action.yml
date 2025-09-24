@@ -3,7 +3,7 @@ name: Update News with Sentiment Analysis
 # on: [push]
 on:
   schedule:
-    - cron: "0 11 * * *" # KST 매일 03:00
+    - cron: "0 18 * * *" # KST 매일 03:00
 
 permissions:
   contents: write
