@@ -69,7 +69,8 @@ def custom_request(url):
 
 # 2. get ids
 def get_last_page(date):
-    baseUrl = f"https://coinreaders.com/search.html?submit=submit&search=%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80&search_exec=all&news_order=1&search_section=all&search_and=1&search_start_day={date}&search_end_day={date}&page="
+    date_without_dash = date.replace("-", "")
+    baseUrl = f"https://coinreaders.com/search.html?submit=submit&search=%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80&search_exec=all&news_order=1&search_section=all&search_and=1&search_start_day={date_without_dash}&search_end_day={date_without_dash}&page="
 
     page = 1
 
@@ -87,7 +88,8 @@ def get_last_page(date):
 
 last_page = get_last_page(date)
 
-baseUrl = f"https://coinreaders.com/search.html?submit=submit&search=%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80&search_exec=all&news_order=1&search_section=all&search_and=1&search_start_day={date}&search_end_day={date}&page="
+date_without_dash = date.replace("-", "")
+baseUrl = f"https://coinreaders.com/search.html?submit=submit&search=%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80&search_exec=all&news_order=1&search_section=all&search_and=1&search_start_day={date_without_dash}&search_end_day={date_without_dash}&page="
 
 full_ids = []
 for page in range(1, last_page + 1):
