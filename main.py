@@ -23,6 +23,8 @@ date = date = (
     .split("T")[0]
 )
 
+date = "2025-10-08"
+
 
 def custom_request(url):
     # 브라우저 유사 헤더
@@ -239,6 +241,7 @@ for idx, news in enumerate(news_list):
     print(f"llm request : {idx+1}/{len(news_list)} finished...")
 
 df["label"] = labels
-df.to_csv(f"news_list_group_by_date/{date.replace("-",".")}.csv", index=False)
+temp = date.replace("-", ".")
+df.to_csv(f"news_list_group_by_date/{temp}.csv", index=False)
 
 print("========== get news sentiment analysis finished ==========")
