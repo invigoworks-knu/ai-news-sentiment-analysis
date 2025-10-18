@@ -23,8 +23,6 @@ date = date = (
     .split("T")[0]
 )
 
-date = "2025-10-08"
-
 
 def custom_request(url):
     # 브라우저 유사 헤더
